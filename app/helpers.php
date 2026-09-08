@@ -13,7 +13,7 @@ if (! function_exists('setting')) {
 if (! function_exists('storage_url')) {
     function storage_url(?string $path): string
     {
-        return $path ? Storage::disk('public')->url($path) : '';
+        return $path ? url('storage/' . ltrim($path, '/')) : '';
     }
 }
 

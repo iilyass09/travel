@@ -199,7 +199,6 @@ class DatabaseSeeder extends Seeder
             ['Driver Berpengalaman & Ramah', 'Driver profesional yang hafal setiap sudut kota Bandung', 'from-orange-400 to-orange-600'],
             ['Mobil Nyaman, Bersih & Terawat', 'Armada terawat dengan perawatan berkala untuk kenyamanan Anda', 'from-blue-400 to-blue-600'],
             ['Sudah Termasuk BBM', 'Tidak perlu khawatir biaya bahan bakar, sudah termasuk dalam paket', 'from-green-400 to-emerald-600'],
-            ['Aman, Nyaman & Bebas Repot', 'Perjalanan wisata yang aman dan tanpa ribet', 'from-purple-400 to-purple-600'],
             ['Siap Antar Destinasi Favorit Anda', 'Fleksibel ke mana saja sesuai keinginan Anda', 'from-orange-400 to-red-500'],
         ];
 

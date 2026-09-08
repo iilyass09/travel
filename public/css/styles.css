@@ -77,6 +77,14 @@
 .animate-float-slow { animation: float-slow 8s ease-in-out infinite 0.5s; }
 .animate-scroll-dot { animation: scroll-dot 1.5s ease-in-out infinite; }
 
+/* Back to top (tepat di atas footer, tengah horizontal) */
+.back-to-top {
+  position: absolute;
+  left: 50%;
+  margin-left: -24px;
+  z-index: 40;
+}
+
 /* Navbar Scroll */
 .navbar-scrolled {
   background: rgba(30, 64, 175, 0.95) !important;
@@ -93,6 +101,7 @@
 
 .mobile-menu.show {
   max-height: 500px;
+  display: block;
 }
 
 /* Hamburger Animation */
@@ -316,6 +325,7 @@ a:focus-visible, button:focus-visible {
 }
 .faq-answer-inner { padding: 0 1.25rem 1.1rem; color: #6b7280; font-size: 0.95rem; line-height: 1.7; }
 .faq-item.open .faq-chevron { transform: rotate(180deg); background: #f97316; color: #fff; }
+.faq-item.open .faq-answer { max-height: 2000px; }
 
 /* Sticky booking bar (mobile) */
 #sticky-book {
@@ -323,7 +333,6 @@ a:focus-visible, button:focus-visible {
 }
 @media (max-width: 767px) {
   body.detail-page { padding-bottom: 5rem; }
-  #back-to-top { bottom: 5.5rem; }
 }
 
 /* Hover zoom untuk galeri detail */
@@ -332,3 +341,10 @@ a:focus-visible, button:focus-visible {
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gallery-card:hover .gallery-bg { transform: scale(1.08); }
+
+/* Dark mode overrides untuk komponen CSS */
+.dark .subnav-link { color: #9ca3af; }
+.dark .subnav-link:hover { color: #93c5fd; background: rgba(30, 58, 138, 0.4); }
+.dark .faq-item { border-color: #374151; background: #1f2937; }
+.dark .faq-question { color: #f3f4f6; }
+.dark .faq-answer-inner { color: #9ca3af; }

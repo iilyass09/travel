@@ -101,22 +101,22 @@
   </section>
 
   <!-- Best Seller Paket -->
-  <section id="paket" class="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+  <section id="paket" class="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-72 h-72 bg-blue-100/50 dark:bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center mb-16" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-4">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 dark:bg-orange-500/20 rounded-full mb-4">
           <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           <span class="text-orange-700 font-semibold text-sm">{{ setting('paket_badge', 'Best Seller') }}</span>
         </div>
-        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">{{ setting('paket_title_prefix', 'Paket') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">{{ setting('paket_title_accent', 'City Tour Bandung') }}</span></h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">{{ setting('paket_subtitle', 'Pilihan paket wisata terbaik untuk menjelajahi keindahan Bandung') }}</p>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">{{ setting('paket_title_prefix', 'Paket') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">{{ setting('paket_title_accent', 'City Tour Bandung') }}</span></h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">{{ setting('paket_subtitle', 'Pilihan paket wisata terbaik untuk menjelajahi keindahan Bandung') }}</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         @foreach ($packages as $i => $package)
         <div class="group" data-aos="fade-up" data-aos-delay="{{ $i * 150 }}">
-          <a href="{{ route('package.show', $package) }}" class="absolute inset-0 z-10 cursor-pointer" aria-label="Lihat detail paket wisata {{ $package->name }}"></a>
-          <div class="relative bg-white rounded-3xl shadow-xl shadow-blue-100/50 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+          <div class="relative bg-white dark:bg-gray-800 dark:border-gray-700 rounded-3xl shadow-xl shadow-blue-100/50 dark:shadow-none overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+            <a href="{{ route('package.show', $package) }}" class="absolute inset-0 z-10 cursor-pointer" aria-label="Lihat detail paket wisata {{ $package->name }}"></a>
             <div class="relative h-56 overflow-hidden">
               @if ($package->coverUrl())
                 <img src="{{ $package->coverUrl() }}" alt="{{ $package->name }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
@@ -129,12 +129,12 @@
               @endif
             </div>
             <div class="p-6 flex flex-col flex-1">
-              <div class="flex items-center gap-2 mb-3"><svg class="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><h3 class="font-heading font-bold text-xl text-gray-900">{{ $package->name }}</h3></div>
-              <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-1">{{ $package->short_desc }}</p>
+              <div class="flex items-center gap-2 mb-3"><svg class="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><h3 class="font-heading font-bold text-xl text-gray-900 dark:text-white">{{ $package->name }}</h3></div>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed flex-1">{{ $package->short_desc }}</p>
               <div class="flex items-center justify-between">
                 <div>
                   <div class="text-gray-400 text-xs">Mulai dari</div>
-                  <div class="font-heading font-extrabold text-xl text-gray-900">{{ $package->price ?? 'Custom' }}</div>
+                  <div class="font-heading font-extrabold text-xl text-gray-900 dark:text-white">{{ $package->price ?? 'Custom' }}</div>
                 </div>
                 <a href="{{ wa_link('Halo Gaskeun Travel, saya ingin memesan paket ' . $package->name . '. Mohon infonya.') }}" target="_blank" rel="noopener noreferrer" class="relative z-20 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm font-bold rounded-full hover:from-orange-600 hover:to-orange-700 shadow-lg shadow-orange-500/30 transition-all duration-200">Pesan</a>
               </div>
@@ -147,19 +147,19 @@
   </section>
 
   <!-- Destinasi -->
-  <section id="destinasi" class="py-24 bg-white relative overflow-hidden">
+  <section id="destinasi" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-orange-500 to-blue-600"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg><span class="text-blue-700 font-semibold text-sm">{{ setting('destinasi_badge', 'Tempat Wisata') }}</span></div>
-        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">{{ setting('destinasi_title_prefix', 'Destinasi') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">{{ setting('destinasi_title_accent', 'Wisata') }}</span> {{ setting('destinasi_title_suffix', 'Bandung') }}</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">{{ setting('destinasi_subtitle', 'Jelajahi berbagai tempat wisata menarik di seluruh penjuru Bandung') }}</p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-500/20 rounded-full mb-4"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg><span class="text-blue-700 dark:text-blue-300 font-semibold text-sm">{{ setting('destinasi_badge', 'Tempat Wisata') }}</span></div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">{{ setting('destinasi_title_prefix', 'Destinasi') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">{{ setting('destinasi_title_accent', 'Wisata') }}</span> {{ setting('destinasi_title_suffix', 'Bandung') }}</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">{{ setting('destinasi_subtitle', 'Jelajahi berbagai tempat wisata menarik di seluruh penjuru Bandung') }}</p>
       </div>
       <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
         <button class="dest-tab active px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-blue-600 text-white shadow-lg shadow-blue-200" data-filter="all">Semua</button>
-        <button class="dest-tab px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-700" data-filter="alami">Alami</button>
-        <button class="dest-tab px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-700" data-filter="kota">Kota</button>
-        <button class="dest-tab px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-700" data-filter="wisata">Wisata Populer</button>
+        <button class="dest-tab px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 text-gray-600 hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-gray-700" data-filter="alami">Alami</button>
+        <button class="dest-tab px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 text-gray-600 hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-gray-700" data-filter="kota">Kota</button>
+        <button class="dest-tab px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 text-gray-600 hover:bg-blue-100 hover:text-blue-700 dark:hover:bg-gray-700" data-filter="wisata">Wisata Populer</button>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" id="dest-grid">
         @foreach ($destinations as $i => $d)
@@ -170,8 +170,8 @@
             @else
               <div class="absolute inset-0 bg-gradient-to-br {{ $d->gradient }} group-hover:scale-110 transition-transform duration-700"></div>
             @endif
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4"><svg class="w-10 h-10 mb-2 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="font-heading font-bold text-sm md:text-base text-center">{{ $d->name }}</span></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 group-hover:from-black/70 group-hover:via-black/40 group-hover:to-black/30 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-4"><svg class="w-10 h-10 mb-2 opacity-90 drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span class="font-heading font-bold text-sm md:text-base text-center drop-shadow-md">{{ $d->name }}</span></div>
           </div>
         </div>
         @endforeach
@@ -180,27 +180,27 @@
   </section>
 
   <!-- Kuliner -->
-  <section id="kuliner" class="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-    <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-100/50 rounded-full blur-3xl"></div>
+  <section id="kuliner" class="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange-100/50 dark:bg-orange-500/10 rounded-full blur-3xl"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center mb-16" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-4"><svg class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0A1.5 1.5 0 013 15.546M12 2v4m0 0a2 2 0 100 4 2 2 0 000-4z"/></svg><span class="text-orange-700 font-semibold text-sm">{{ setting('kuliner_badge', 'Kuliner Nikmat') }}</span></div>
-        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">{{ setting('kuliner_title_prefix', 'Spot') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">{{ setting('kuliner_title_accent', 'Kuliner') }}</span> {{ setting('kuliner_title_suffix', 'Bandung') }}</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">{{ setting('kuliner_subtitle', 'Cicipi berbagai kuliner lezat khas Bandung yang menggugah selera') }}</p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 dark:bg-orange-500/20 rounded-full mb-4"><svg class="w-4 h-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0A1.5 1.5 0 013 15.546M12 2v4m0 0a2 2 0 100 4 2 2 0 000-4z"/></svg><span class="text-orange-700 dark:text-orange-300 font-semibold text-sm">{{ setting('kuliner_badge', 'Kuliner Nikmat') }}</span></div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">{{ setting('kuliner_title_prefix', 'Spot') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">{{ setting('kuliner_title_accent', 'Kuliner') }}</span> {{ setting('kuliner_title_suffix', 'Bandung') }}</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">{{ setting('kuliner_subtitle', 'Cicipi berbagai kuliner lezat khas Bandung yang menggugah selera') }}</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($kulinerSpots as $i => $k)
         <div class="kuliner-card group" data-aos="fade-up" data-aos-delay="{{ ($i % 3) * 100 }}">
-          <div class="bg-white rounded-2xl p-6 shadow-lg shadow-orange-100/50 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 border border-gray-100 h-full">
+          <div class="bg-white dark:bg-gray-800 dark:border-gray-700 rounded-2xl p-6 shadow-lg shadow-orange-100/50 dark:shadow-none hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 border border-gray-100 h-full">
             <div class="flex items-start gap-4">
               <div class="w-14 h-14 bg-gradient-to-br {{ $k->gradient }} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/></svg></div>
               <div>
-                <h3 class="font-heading font-bold text-lg text-gray-900 mb-1">{{ $k->name }}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">{{ $k->description }}</p>
+                <h3 class="font-heading font-bold text-lg text-gray-900 dark:text-white mb-1">{{ $k->name }}</h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">{{ $k->description }}</p>
                 @if ($k->tagList())
                 <div class="mt-3 flex items-center flex-wrap gap-2">
                   @foreach ($k->tagList() as $idx => $tag)
-                    @php $colors = ['bg-orange-100 text-orange-700', 'bg-blue-100 text-blue-700', 'bg-green-100 text-green-700', 'bg-purple-100 text-purple-700', 'bg-red-100 text-red-700', 'bg-yellow-100 text-yellow-700']; @endphp
+                    @php $colors = ['bg-orange-100 text-orange-700 dark:bg-orange-500/20 dark:text-orange-300', 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-300', 'bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-300', 'bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-300', 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-300', 'bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-300']; @endphp
                     <span class="px-3 py-1 {{ $colors[$idx % count($colors)] }} text-xs font-semibold rounded-full">{{ $tag }}</span>
                   @endforeach
                 </div>
@@ -215,12 +215,12 @@
   </section>
 
   <!-- Shopping -->
-  <section id="shopping" class="py-24 bg-white relative overflow-hidden">
+  <section id="shopping" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div class="text-center mb-16" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg><span class="text-blue-700 font-semibold text-sm">{{ setting('shopping_badge', 'Shopping Seru') }}</span></div>
-        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">{{ setting('shopping_title_prefix', 'Tempat') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">{{ setting('shopping_title_accent', 'Shopping') }}</span> {{ setting('shopping_title_suffix', 'Bandung') }}</h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">{{ setting('shopping_subtitle', 'Belanja sepuasnya di berbagai tempat shopping favorit di Bandung') }}</p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-500/20 rounded-full mb-4"><svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg><span class="text-blue-700 dark:text-blue-300 font-semibold text-sm">{{ setting('shopping_badge', 'Shopping Seru') }}</span></div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">{{ setting('shopping_title_prefix', 'Tempat') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">{{ setting('shopping_title_accent', 'Shopping') }}</span> {{ setting('shopping_title_suffix', 'Bandung') }}</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">{{ setting('shopping_subtitle', 'Belanja sepuasnya di berbagai tempat shopping favorit di Bandung') }}</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach ($shoppingSpots as $i => $s)
@@ -233,7 +233,7 @@
         </div>
         @endforeach
       </div>
-      <div class="text-center mt-8" data-aos="fade-up"><p class="text-gray-500 text-sm italic">{{ setting('shopping_note', 'Dan masih banyak tempat shopping lainnya yang bisa dikunjungi') }}</p></div>
+      <div class="text-center mt-8" data-aos="fade-up"><p class="text-gray-500 dark:text-gray-400 text-sm italic">{{ setting('shopping_note', 'Dan masih banyak tempat shopping lainnya yang bisa dikunjungi') }}</p></div>
     </div>
   </section>
 

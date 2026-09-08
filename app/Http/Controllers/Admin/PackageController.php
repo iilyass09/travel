@@ -149,7 +149,7 @@ class PackageController extends Controller
 
         $package->itineraries()->create($data);
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-itinerary')->with('success', 'Itinerary ditambahkan.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-itinerary')->with('success', 'Itinerary ditambahkan.');
     }
 
     public function updateItinerary(Request $request, ItineraryItem $itinerary): RedirectResponse
@@ -161,7 +161,7 @@ class PackageController extends Controller
             'description' => ['nullable', 'string'],
         ]));
 
-        return redirect()->route('admin.packages.edit', $itinerary->package)->fragment('tab-itinerary')->with('success', 'Itinerary diperbarui.');
+        return redirect()->route('admin.packages.edit', $itinerary->package)->withFragment('tab-itinerary')->with('success', 'Itinerary diperbarui.');
     }
 
     public function destroyItinerary(ItineraryItem $itinerary): RedirectResponse
@@ -169,7 +169,7 @@ class PackageController extends Controller
         $package = $itinerary->package;
         $itinerary->delete();
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-itinerary')->with('success', 'Itinerary dihapus.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-itinerary')->with('success', 'Itinerary dihapus.');
     }
 
     // ---- Pricing ----
@@ -181,14 +181,14 @@ class PackageController extends Controller
 
         $package->pricingTiers()->create($data);
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-harga')->with('success', 'Pilihan harga ditambahkan.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-harga')->with('success', 'Pilihan harga ditambahkan.');
     }
 
     public function updatePricing(Request $request, PricingTier $tier): RedirectResponse
     {
         $tier->update($this->pricingData($request));
 
-        return redirect()->route('admin.packages.edit', $tier->package)->fragment('tab-harga')->with('success', 'Pilihan harga diperbarui.');
+        return redirect()->route('admin.packages.edit', $tier->package)->withFragment('tab-harga')->with('success', 'Pilihan harga diperbarui.');
     }
 
     public function destroyPricing(PricingTier $tier): RedirectResponse
@@ -196,7 +196,7 @@ class PackageController extends Controller
         $package = $tier->package;
         $tier->delete();
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-harga')->with('success', 'Pilihan harga dihapus.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-harga')->with('success', 'Pilihan harga dihapus.');
     }
 
     private function pricingData(Request $request): array
@@ -229,7 +229,7 @@ class PackageController extends Controller
 
         $package->facility()->create($data);
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-fasilitas')->with('success', 'Fasilitas ditambahkan.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-fasilitas')->with('success', 'Fasilitas ditambahkan.');
     }
 
     public function updateFacility(Request $request, FacilityItem $item): RedirectResponse
@@ -239,7 +239,7 @@ class PackageController extends Controller
             'text' => ['required', 'string', 'max:255'],
         ]));
 
-        return redirect()->route('admin.packages.edit', $item->package)->fragment('tab-fasilitas')->with('success', 'Fasilitas diperbarui.');
+        return redirect()->route('admin.packages.edit', $item->package)->withFragment('tab-fasilitas')->with('success', 'Fasilitas diperbarui.');
     }
 
     public function destroyFacility(FacilityItem $item): RedirectResponse
@@ -247,7 +247,7 @@ class PackageController extends Controller
         $package = $item->package;
         $item->delete();
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-fasilitas')->with('success', 'Fasilitas dihapus.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-fasilitas')->with('success', 'Fasilitas dihapus.');
     }
 
     // ---- FAQ ----
@@ -262,7 +262,7 @@ class PackageController extends Controller
 
         $package->faqs()->create($data);
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-faq')->with('success', 'FAQ ditambahkan.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-faq')->with('success', 'FAQ ditambahkan.');
     }
 
     public function updateFaq(Request $request, Faq $faq): RedirectResponse
@@ -272,7 +272,7 @@ class PackageController extends Controller
             'answer' => ['required', 'string'],
         ]));
 
-        return redirect()->route('admin.packages.edit', $faq->package)->fragment('tab-faq')->with('success', 'FAQ diperbarui.');
+        return redirect()->route('admin.packages.edit', $faq->package)->withFragment('tab-faq')->with('success', 'FAQ diperbarui.');
     }
 
     public function destroyFaq(Faq $faq): RedirectResponse
@@ -280,7 +280,7 @@ class PackageController extends Controller
         $package = $faq->package;
         $faq->delete();
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-faq')->with('success', 'FAQ dihapus.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-faq')->with('success', 'FAQ dihapus.');
     }
 
     // ---- Gallery ----
@@ -301,7 +301,7 @@ class PackageController extends Controller
 
         $package->images()->create($data);
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-galeri')->with('success', 'Gambar galeri ditambahkan.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-galeri')->with('success', 'Gambar galeri ditambahkan.');
     }
 
     public function destroyGallery(PackageImage $image): RedirectResponse
@@ -312,7 +312,7 @@ class PackageController extends Controller
         }
         $image->delete();
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-galeri')->with('success', 'Gambar galeri dihapus.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-galeri')->with('success', 'Gambar galeri dihapus.');
     }
 
     // ---- Testimonial ----
@@ -324,14 +324,14 @@ class PackageController extends Controller
 
         $package->testimonials()->create($data);
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-testimoni')->with('success', 'Testimoni ditambahkan.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-testimoni')->with('success', 'Testimoni ditambahkan.');
     }
 
     public function updateTestimonial(Request $request, Testimonial $testimonial): RedirectResponse
     {
         $testimonial->update($this->testimonialData($request));
 
-        return redirect()->route('admin.packages.edit', $testimonial->package)->fragment('tab-testimoni')->with('success', 'Testimoni diperbarui.');
+        return redirect()->route('admin.packages.edit', $testimonial->package)->withFragment('tab-testimoni')->with('success', 'Testimoni diperbarui.');
     }
 
     public function destroyTestimonial(Testimonial $testimonial): RedirectResponse
@@ -339,7 +339,7 @@ class PackageController extends Controller
         $package = $testimonial->package;
         $testimonial->delete();
 
-        return redirect()->route('admin.packages.edit', $package)->fragment('tab-testimoni')->with('success', 'Testimoni dihapus.');
+        return redirect()->route('admin.packages.edit', $package)->withFragment('tab-testimoni')->with('success', 'Testimoni dihapus.');
     }
 
     private function testimonialData(Request $request): array

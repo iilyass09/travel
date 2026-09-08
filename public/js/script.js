@@ -149,13 +149,25 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
   document.head.appendChild(style);
 
-  // Back to top
+  // Back to top (diposisikan tepat di atas footer, tengah horizontal)
+  const footerEl = document.querySelector('footer');
   const backToTop = document.createElement('button');
   backToTop.innerHTML = '<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>';
-  backToTop.className = 'fixed bottom-8 right-8 z-50 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg shadow-blue-300 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-blue-700 hover:scale-110';
+  backToTop.className = 'back-to-top w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg shadow-blue-300 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-blue-700 hover:scale-110';
   backToTop.id = 'back-to-top';
   backToTop.setAttribute('aria-label', 'Back to top');
-  document.body.appendChild(backToTop);
+  if (footerEl) {
+    document.body.insertBefore(backToTop, footerEl);
+  } else {
+    document.body.appendChild(backToTop);
+  }
+
+  function positionBackToTop() {
+    if (!footerEl) return;
+    backToTop.style.top = (footerEl.offsetTop - backToTop.offsetHeight - 14) + 'px';
+  }
+  positionBackToTop();
+  window.addEventListener('resize', positionBackToTop, { passive: true });
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 500) {
